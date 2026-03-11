@@ -82,7 +82,7 @@ Then, open your browser at: http://127.0.0.1:5000
 ### Main page
 ![<Головна сторінка>](screenshots/main_page.png)
 
-### Результат розпізнавання
+### Recognition result
 ![Результат](screenshots/result.png)
 ⚠️ Safety Disclaimer
 
