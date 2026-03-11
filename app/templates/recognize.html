@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="blur-background">
+
+<h2>Uploaded image</h2>
+
+<img src="{{ url_for('uploaded_file', filename=uploaded_image_name) }}" width="400">
+
+{% if not_edible > 0.1 %}
+  <h3 style="color: red;">There is a high probability that the mushroom is poisonous or not edible!!</h3>
+{% endif %}
+<h2>Most probable species</h2>
+
+<div class="predictions">
+
+  {% for mushroom in predictions %}
+    <div class="card">
+      <div class="carousel" data-index="0">
+
+        {% for image in mushroom.images %}
+          <!-- додаємо картинку гриба з сету розпізнаних варіантів-->
+          <img src="{{ url_for('static', filename='images/merged_dataset/' + mushroom.name + '/' + image) }}"
+               {% if not loop.first %}style="display:none"{% endif %}>
+        {% endfor %}
+
+        <button class="prev">‹</button>
+        <button class="next">›</button>
+
+      </div>
+
+      {% if mushroom["edibilyty"] != "edible" %}
+        <p style="color:red">
+          {% else %}
+        <p style="color:green">
+      {% endif %}
+
+      {{ mushroom["name"] }} <br>
+      {{ mushroom["edibilyty"] }} <br>
+      {{ (mushroom["prediction"] * 100) | round(1) }} %
+
+      </p>
+
+    </div>
+
+  {% endfor -%}
+  {%- include "includes/form.html" %}
+
+</div>
+
+<script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+</body>
+</html>

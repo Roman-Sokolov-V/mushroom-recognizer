@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="header">
+    <h1>Mushroom Recognition</h1>
+    <h3>This site recognizes 169 species of mushrooms</h3>
+  </div>
+
+
+    {% for message in get_flashed_messages() %}
+        <p class="flash-message">{{ message }}</p>
+    {% endfor %}
+    {% include "includes/form.html" %}
+
+</body>
+</html>

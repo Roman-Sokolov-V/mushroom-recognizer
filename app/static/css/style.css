@@ -1,0 +1,162 @@
+.header {
+    text-align: center;
+    color: papayawhip;
+    text-shadow: -2px -2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    2px 2px 0 black;
+}
+
+.header h1,
+.header h3 {
+    color: papayawhip;
+    margin: 5px 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+
+    /* Додаємо фон */
+    background-image: url("../images/mushrooms_bg.jpg");
+    background-size: cover; /* Фон займає весь екран */
+    background-position: center; /* Центруємо зображення */
+    background-repeat: no-repeat; /* Не повторюємо */
+    background-attachment: fixed; /* Фон не рухається при прокручуванні */
+}
+
+body.blur-background {
+    background-image: url("../images/mushrooms_bg.jpg"); /* відносно CSS */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* overlay для напівпрозорості або blur */
+body.blur-background::before {
+    content: "";
+    position: fixed; /* поверх всього контенту */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* напівпрозорий білий */
+    backdrop-filter: blur(5px); /* розмиття фону */
+    z-index: 0;
+}
+
+/* контент поверх overlay */
+body.blur-background > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p.description {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.3); /* 85% непрозорості */
+    padding: 30px 40px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 100px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #2ecc71;
+}
+
+.flash-message {
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.predictions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    width: 240px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
