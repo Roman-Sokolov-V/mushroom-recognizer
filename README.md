@@ -79,7 +79,11 @@ flask --app app/app run
 
 Then, open your browser at: http://127.0.0.1:5000
 🖼 Examples & UI
+### Main page
+![<Головна сторінка>](screenshots/main_page.png)
 
+### Результат розпізнавання
+![Результат](screenshots/result.png)
 ⚠️ Safety Disclaimer
 
 IMPORTANT: This application is for educational purposes only.
