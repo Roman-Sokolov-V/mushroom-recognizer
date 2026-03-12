@@ -97,4 +97,4 @@ IMPORTANT: This application is for educational purposes only.
 
 Author: Roman Sokolov
 
-Project Link: https://github.com/your-username/mushroom-recognizer
+Project Link: https://github.com/Roman-Sokolov-V/mushroom-recognizer
