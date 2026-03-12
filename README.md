@@ -31,7 +31,7 @@ Resources
 
 Dataset: https://www.kaggle.com/datasets/zlatan599/mushroom1
 
-Training Notebook: https://colab.research.google.com/drive/1EnPy50DWmuoCmPe9hciDzyL5sOGv7NCV#scrollTo=A27lIIv4o9dQ — Explore the training process, data augmentation, and evaluation metrics.
+Training Notebook: https://colab.research.google.com/drive/1EnPy50DWmuoCmPe9hciDzyL5sOGv7NCV?usp=sharing — Explore the training process, data augmentation, and evaluation metrics.
 
 📂 Project Structure
 ```
